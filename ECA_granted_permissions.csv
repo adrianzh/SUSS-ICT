@@ -1,0 +1,5 @@
+id,user_id,access_path
+d4d5fe65-c557-4b46-8c39-104ee14b89f1,user_0000000000,location_32
+b59bb702-6511-40ca-9513-b0d8f1a1e8f5,user_0000000000,location_32::location_216
+054b7714-6eb2-4ec6-b85d-791ef5e92d2f,user_0000000001,location_32::location_216::location_1380
+88f93528-e469-40d6-8444-229f02e36fa0,user_0000000009,location_32::location_216
