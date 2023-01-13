@@ -1,0 +1,6 @@
+Flask
+WTForms
+Flask-WTF
+Flask-MongoEngine
+Flask-Login
+Jinja2
