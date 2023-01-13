@@ -1,0 +1,29 @@
+{% from "_render_field.html" import render_field %}
+{% extends "base.html" %}
+{% block panel %} {{aCourseName}} {% endblock %}
+{% block title %} {{aCourseName}} {% endblock %}
+{% block mainblock %}
+<div class="col-xl-6 col-sm-6 p-2">
+    <div class="card card-common">
+    <img height=100px width=80% src="{{aCourse.image}}">
+    <h5>{{aCourse.name}}</h5>
+    {{aCourse.description}}
+    </div>
+</div>
+<div class="col-xl-6 col-sm-6 p-2">
+    <div class="card card-common">
+    <div class="form">
+        <form action="/courseDetail" method="POST">
+            <fieldset>
+                <legend>Select Tee Off Time</legend>
+                <input name="type" type="hidden" value="courseBook">
+                <label for="tee_time">Tee_time</label>
+                <input type="datetime-local" id="tee_time" name="tee_time">
+                <input name="courseType" type="hidden" value="{{aCourse.name}}">
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}

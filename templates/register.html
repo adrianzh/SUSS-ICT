@@ -1,0 +1,27 @@
+{% from "_render_field.html" import render_field %}
+{% extends "base.html" %}
+{% block panel %} Register {% endblock %}
+{% block title %} Register {% endblock %}
+{% block mainblock %}
+
+<div class="col-xl-6 col-sm-6 p-2">
+    <div class="card card-common">
+    <div class="form">
+        <form action="/register" method="POST">
+            <fieldset>
+                <legend>Register</legend>
+                {{ render_field(RegistrationForm.email, type="email", placeholder="Enter email", id="email") }}
+                
+                {{ render_field(RegistrationForm.password, type="password", placeholder="Enter password", id="password") }}
+                
+                {{ render_field(RegistrationForm.name, type="text", id="name") }}
+                <input type="checkbox" id="remember-me" name="remember-me">
+                <label for="remember-me">Remember me</label>
+                <br><br>
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}

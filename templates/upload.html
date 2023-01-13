@@ -1,0 +1,27 @@
+{% from "_render_field.html" import render_field %}
+{% extends "base.html" %}
+{% block panel %} UPLOAD {% endblock %}
+{% block title %} UPLOAD {% endblock %}
+{% block mainblock %}
+<div class="col-xl-6 col-sm-6 p-2">
+    <div class="card card-common">
+    <div class="form">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Upload recordings</legend>
+                <label for='upload'>Upload CSV file</label><br>
+                <label>with data type of: </label>
+                <select name="type">
+                    <option value="course" selected>Course</option>
+                    <option value="booking">Booking</option>
+                </select><br>
+                <input name="type" type="hidden" value="upload">
+                <input class="upload" id='upload' name='file' type='file' accept='.csv' required>
+                <br>
+                <input type="submit" value="Upload" type="Upload">
+            </fieldset>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}

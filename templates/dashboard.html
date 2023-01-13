@@ -1,0 +1,41 @@
+{% from "_render_field.html" import render_field %}
+{% extends "base.html" %}
+{% block panel %} Dashboard {% endblock %}
+{% block title %} Dashboard {% endblock %}
+{% block sidebaralt %} 
+    <ul class="navbar-nav flex-column mt-4">
+        <li class="nav-item"><a href="courses" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-address-card text-light fa-lg mr-3"></i>Back to Course</a></li>
+    </ul>
+
+    <!-- ECA -->
+    <input type="hidden" id="getUser" value="{{aUser}}"/>
+    <input type="hidden" id="filterUser" value="{{filterByUser}}"/>
+
+    <label for="courseList">
+        <select name="courseList" id="courseList">
+            <option disabled selected>Select One Course</option>
+            {% for aCourse in courses %}
+                <option value="{{aCourse.name}}">{{aCourse.name}}</option>
+            {% endfor %}
+        </select>
+    </label>
+{% endblock %}
+{% block mainblock %}
+<div class="col-sm-11 p-2">
+    <div class="card card-common">
+        <div class="form">
+            <legend>Show Schedule</legend>
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/myLineChartAJAX.js') }}"></script>
+
+
+{% endblock %}
